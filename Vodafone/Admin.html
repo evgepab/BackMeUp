@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Back Me Up - Blank </title>
+    <title>SB Admin 2 - Charts</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,73 +31,36 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="Admin.html">
             <div class="sidebar-brand-text mx-3">Vodafone <sup>Support Portal</sup></div>
         </a>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-            <a class="nav-link" href="Monitor.html">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Monitor</span></a>
-        </li>
-
-        <li class="nav-item active">
-        <a class="nav-link" href="PanicButton.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Panic Buttom</span></a>
-        </li>
-
-        <li class="nav-item active">
-            <a class="nav-link" href="ChatRoom.html">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Chat Room</span></a>
-            </li>
-        
             <!-- Divider -->
         <hr class="sidebar-divider">
             <!-- Heading -->
             <div class="sidebar-heading">
-                Information Systems Analysis and Design
+                Settings
             </div>
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                 aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Εργασίες:
+                <span>Manage Users:
                 </span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="buttons.html">Παραδοτέο Νο.1</a>
-                    <a class="collapse-item" href="cards.html">Παραδοτέο Νο.2</a>
+                    <a class="collapse-item" href="404.html">Add new Users</a>
+                    <a class="collapse-item" href="404.html">See All Users</a>
                 </div>
             </div>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider">
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Contacts
-        </div>
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="Our Team.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Our Team</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="Our Team.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Stakeholders</span></a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
 
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
@@ -261,7 +224,7 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">DMST AUEB</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">ADMIN</span>
                             <img class="img-profile rounded-circle"
                                 src="img/undraw_profile.svg">
                         </a>
@@ -297,7 +260,62 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Charts</h1>
+                    <p class="mb-4">description description description description description description description</p>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <div class="col-xl-8 col-lg-7">
+
+                            <!-- Area Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Sales 2021</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                    <hr>
+                                    Sales done a very good perfomance April - July and November, December.
+                                </div>
+                            </div>
+
+                            <!-- Bar Chart -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">New Clients per Month 2021</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-bar">
+                                        <canvas id="myBarChart"></canvas>
+                                    </div>
+                                    <hr>
+                                    There has been steady growth throughout the year.
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Donut Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Market Share 2021</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                    <hr>
+                                    Vodafone stil has the biggest Market Share percetange (55%). Cosmote follows with 30% and Wind 15%.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- /.container-fluid -->
@@ -355,6 +373,14 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/chart-bar-demo.js"></script>
 
 </body>
 
