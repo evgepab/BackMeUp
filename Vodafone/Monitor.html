@@ -1,6 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+    @use postcss-cssnext;
+    /* used for the awesome color()-function */
+
+    :root {
+        --btnColor: #eee;
+    }
+
+    body {
+        background: #eee;
+        padding: 0;
+        text-align: center;
+    }
+
+    button {
+        font: bold 3rem Roboto, sans-serif;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.8);
+        text-shadow: 0 0.08em 0 rgba(255, 255, 255, 0.5);
+        display: inline-block;
+        outline: none;
+        cursor: pointer;
+        padding: 0.4em 1em 0.5em;
+        border-radius: 0.3em;
+        border: 2px solid;
+        border-color: color(var(--btnColor) shade(20%)) color(var(--btnColor) shade(30%)) color(var(--btnColor) shade(40%));
+        background-color: var(--btnColor);
+        background-image: linear-gradient(var(--btnColor), color(var(--btnColor) shade(10%)));
+        box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.1), 0 0.1em 0.2em rgba(0, 0, 0, 0.3), 0 -0.1em 0.07em rgba(0, 0, 0, 0.3) inset, 0 0.1em 0.07em rgba(255, 255, 255, 0.2) inset;
+        transition: all 100ms;
+    }
+
+    button:hover,
+    button:focus {
+        box-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.4), 0 0.1em 0.2em rgba(0, 0, 0, 0.4), 0 -0.1em 0.07em rgba(0, 0, 0, 0.3) inset, 0 0.1em 0.07em rgba(255, 255, 255, 0.2) inset;
+    }
+
+    button:active {
+        padding: 0.4em 1em 0.4em;
+        margin-top: 0.1em;
+        border-color: color(var(--btnColor) shade(30%)) color(var(--btnColor) shade(20%)) var(--btnColor);
+        background-image: linear-gradient(color(var(--btnColor) shade(5%)), var(--btnColor));
+        box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1) inset, 0 0.1em 0.1em rgba(0, 0, 0, 0.2) inset, 0.05em 0 0.07em rgba(0, 0, 0, 0.2) inset, -0.05em 0 0.07em rgba(0, 0, 0, 0.2) inset;
+        transition-duration: 10ms;
+    }
+</style>
+
 <head>
 
     <meta charset="utf-8">
@@ -46,37 +93,11 @@
             </li>
 
             <li class="nav-item active">
-                <a class="nav-link" href="PanicButton.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Panic Buttom</span></a>
-            </li>
-
-            <li class="nav-item active">
                 <a class="nav-link" href="ChatRoom.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Chat Room</span></a>
             </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Information Systems Analysis and Design
-            </div>
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Εργασίες:
-                    </span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="buttons.html">Παραδοτέο Νο.1</a>
-                        <a class="collapse-item" href="cards.html">Παραδοτέο Νο.2</a>
-                    </div>
-                </div>
-            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
             <!-- Heading -->
@@ -243,8 +264,8 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">  </h1>
-                    
+                    <h1 class="h3 mb-4 text-gray-800"> </h1>
+
                     <div style="display:block;" id="loader">
                         <img src="img/loading_screen.gif" alt="loading screen">
                     </div>
@@ -255,7 +276,12 @@
                             <h2> <span> Siebel is working perfectly! </span> </h2>
                         </div>
                         <div style="display:none;" id="fail">
-                            <h2> <span> Siebel isn't working right now. We are fixing the problem... </span> </h2>
+                            <h2> <span> Siebel isn't working right now. We are fixing the problem... </span>
+                                <br>
+                                <br>
+                                <button>Activate Back Me Up</button>
+                            </h2>
+                            
                         </div>
                     </div>
 
@@ -265,15 +291,15 @@
                         }
                         function showPage() {
                             if (document.getElementById("loader").style.display == "block") {
-                                    document.getElementById("loader").style.display = "none";
-                                    document.getElementById("check-review").style.display = "block";
-                                    showMessage();
-                                    setTimeout(showPage, 10000);
+                                document.getElementById("loader").style.display = "none";
+                                document.getElementById("check-review").style.display = "block";
+                                showMessage();
+                                setTimeout(showPage, 10000);
                             } else {
-                                    document.getElementById("loader").style.display = "block";
-                                    document.getElementById("check-review").style.display = "none";
-                                    showMessage();
-                                    setTimeout(showPage, 3000);
+                                document.getElementById("loader").style.display = "block";
+                                document.getElementById("check-review").style.display = "none";
+                                showMessage();
+                                setTimeout(showPage, 3000);
                             }
                         }
 
@@ -308,11 +334,6 @@
 
     </div>
     <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
